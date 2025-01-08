@@ -2,6 +2,15 @@ library('readxl')
 library(ggplot2)
 library(tidyverse)
 library(dplyr)
+library(ggpubr)
+
+#*(D)
+data.cross <- read.table('mldist_list.txt',header = TRUE)
+my_comparisons = list( c("MAGs", "REF"))
+p <- ggboxplot(data.cross,x = "type",y = "value",color = "type",add = "jitter") 
+p2<-p + stat_compare_means(comparisons = my_comparisons,
+                       # label = "p.signif",
+                       method = "t.test")
 
 #*(E)
 df_hmp<- read_xlsx('hmp.xlsx')
