@@ -1,0 +1,45 @@
+#heatmap
+!legendTitle	ML distance
+!showLegends	1
+#!defaultStrokeColor	pink
+#!defaultStrokeWidth	2
+!colorgradient	blue, yellow,red
+!colorgradientMarkLabel	0,0.3,0.6,0.9,1.2
+# -- heatmap column labels --
+!showHeatMapColumnLabel	1
+!heatmapColumnLabels	distance
+# -- heatmap --
+!heatmap	margin=2,colwidth=60,roundedcorner=2
+# -- show data value
+!showdataValue	show=1,fontsize=12,fontitalic=0,textalign=start
+ref_GCF_021295095.1_ASM2129509v1	1.0823 
+ref_GCF_025567125.1_ASM2556712v1	0.9237 
+ref_GCF_000187895.1_ASM18789v1	0.9380 
+ref_GCF_000373085.1_ASM37308v1	1.1540 
+ref_GCF_000312445.1_ASM31244v1	1.1224 
+ref_GCF_021730445.1_ASM2173044v1	0.9988 
+ref_GCF_024622025.1_ASM2462202v1	1.1976 
+ref_GCF_016766915.1_ASM1676691v1	1.0535 
+ref_GCF_000382445.1_Bact_mass_DSM_17679_V1	1.1540 
+candidate_SRS048870_bin.18	0.0000 
+ref_GCF_028538915.1_ASM2853891v1	1.0535 
+ref_GCF_000156075.1_ASM15607v1	0.9796 
+ref_GCF_031001655.1_ASM3100165v1	1.1540 
+ref_GCF_000154845.1_ASM15484v1	1.1861 
+ref_GCF_013009555.1_ASM1300955v1	0.9796 
+ref_GCF_014837055.1_ASM1483705v1	1.0364 
+ref_GCF_014837065.1_ASM1483706v1	1.0475 
+ref_GCF_000374585.1_ASM37458v1	0.9238 
+ref_GCF_000012825.1_ASM1282v1	1.0535 
+ref_GCF_013618865.1_ASM1361886v1	1.0730 
+ref_GCF_000190575.1_ASM19057v1	0.9070 
+ref_GCF_000613805.1_ASM61380v1	0.8764 
+ref_GCF_000157915.1_ASM15791v1	1.1708 
+ref_GCF_025146415.1_ASM2514641v1	0.9796 
+mag_SRS065504_bin.21	0.0038 
+mag_SRS022071_bin.51	0.0027 
+mag_SRS011084_bin.14	0.0000
+
+
+
+https://www.evolgenius.info/evolview-v3
