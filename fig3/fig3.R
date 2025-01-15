@@ -1,4 +1,3 @@
-library(dunn.test)
 library(ggpubr)
 library(readxl)
 library(pROC)
@@ -19,6 +18,8 @@ data$predicted <- ifelse(data$HTBGC == TRUE, 1, 0)
 data$predicted <- as.numeric(data$predicted)
 head(data)
 
+roc_curve <- roc(data$actual, data$predicted)
+ci <- ci.auc(roc_curve, conf.level = 0.95)
 roc_plot <- ggroc(roc_curve,alpha = 0.5, colour = "red", linetype = 1, size = 1,legacy.axes = TRUE)+
   theme_bw() + ggtitle(" ") + 
   xlab("False Positive Rate ( FPR )") + ylab("True Positive Rate ( TPR )") + 
