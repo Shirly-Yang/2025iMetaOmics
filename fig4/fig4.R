@@ -9,18 +9,16 @@ DFhumanhgt <- df_humanhgt[,c("phylum","genus","BGC","type")]#BGC大类，type小
 #*(A)
 df <- to_lodes_form(DFhumanhgt[,1:ncol(DFhumanhgt)],axes = 1:ncol(DFhumanhgt),id = "value")
 cString_sanky <- c(
-  "#F1E0A6", "#A7F1D1", "#A8B9E9", "#F2A8D6", 
-  "#F9B5D0", "#F5C0A7", "#B0E8D2", "#C2D8F3", 
-  "#A7D1A9", "#F1D5E1", "#C9E1B0", "#C8A4F2", 
-  "#A6D8E0", "#F4B8A2", "#D9D4F7", "#FFB8E3", 
-  "#A9D3B2", "#F2D19B", "#93A4F7", "#D2F2C2", 
-  "#7BB6F3", "#A5D4A0", "#E7A2F9", "#B9E8F5", 
-  "#D5A1E6", "#F2E2A1", "#C7D6FF", "#C1D9B9", 
-  "#88B3F7", "#D3F4D8", "#DEFCF6", "#EF98A1", 
-  "#FBE3C0", "#AFC8E2", "#E2F2CD", "#B6DAA7", 
-  "#F9D5D5", "#FBC99A", "#E8E0EF", "#C2B1D7", 
-  "#A5D1B0", "#7CA3B8", "#CE8A8D"
-)
+  "#D8D68C", "#A6D1B7", "#A1B7D6", "#E1A9C4", 
+  "#F0A5B9", "#E6B59F", "#A1D5C3", "#A8C3D9", 
+  "#A1D3A0", "#E4C7D1", "#D3E0A2", "#B6A4D8", 
+  "#A3D2D4", "#E1A6A1", "#D1C8F0", "#E4A9C9", 
+  "#A3D1A3", "#E2C17A", "#8F9BDA", "#B9D7A9", 
+  "#7BA6E3", "#A3C0A3", "#D2A6E9", "#A9C7D8", 
+  "#C69FCD", "#E2D79A", "#A8C7E6", "#BCC7A8", 
+  "#84A9E0", "#C3D9D1", "#A4F2E4", "#E3B0A5", 
+  "#F1D0C2", "#A1A4D8", "#C0E6A8", "#B1C1E0", 
+  "#9B6F97", "#A2B1C8", "#B4E8D3", "#D2F1A8")
 p2 <- ggplot(df, aes(x = x, fill=stratum, label=stratum,
                      stratum = stratum, alluvium  = value))+
   geom_flow(linewidth = 0.3,
@@ -73,9 +71,12 @@ for (i in seq(nrow(dat2), 1)) {
 }
 dat2$label2 = paste(dat2$Group.1,'(',round(dat2$per2*100, 2),'%',')', sep = '')
 dat = merge(dat, dat2[,c(1,3,4,5)], by.x = 'genus', by.y = 'Group.1')
-mycol <- c( "#F3D8F1", "#CEBAF0", "#FEC0C1", "#C2B1D7", "#C0E2FD", "#BEEFBF", "#F8C9C8", "#F9D5D5", 
-  "#C0E2D2", "#E9BFC0", "#CDC6FF", "#BFDCE2", "#E2F2CD", "#E1C5A6", "#F1D1F2", "#C9D8F4", "#E8D9C9", "#D4E0C1", 
-  "#F8F0BE", "#A3D7E4", "#D9F3C3", "#F1D1B7", "#B1E1D1",  "#B8D2F2","#E6B9D3")
+mycol <- c(
+  "#A4B8F0", "#F8D0C3", "#A6A9D4", "#F6C4E6", "#80B1D3", 
+  "#719FFB", "#B7D9A4", "#D4A1E8", "#F2A2B8", "#B1B9F3", 
+  "#D5D9C0", "#C4A6F1", "#E8B8D3", "#A3D3F2", "#F9C8B3", 
+  "#C1D1F2", "#E4B1A2", "#A8D8F2", "#D1A3C9", "#F1D3F2", 
+  "#A9C1D3", "#F2A7C3", "#C2D9F5", "#A1D4A1", "#D1F2A8")
 p_pie_phylum <- ggplot(dat) +
   geom_bar(aes(x=3, 
                ifelse(phylum == 'P__Bacillota', per1/18, per1/5),
@@ -126,9 +127,12 @@ for (i in seq(nrow(dat_bgc2), 1)) {
 dat_bgc2$label2 = paste(dat_bgc2$Group.1,'(',round(dat_bgc2$per2*100, 2),'%',')', sep = '')
 dat_bgc = merge(dat_bgc, dat_bgc2[,c(1,3,4,5)], by.x = 'type', by.y = 'Group.1')
 mybgccol <- c(
-  "#F3D8F1", "#CEBAF0", "#FEC0C1", 
-  "#C2B1D7", "#C0E2FD","#BEEFBF", "#F8C9C8", "#F9D5D5", "#C0E2D2", "#E9BFC0","#CDC6FF","#BFDCE2", 
-  "#E2F2CD","#F8F0BE")
+  "#D8B4D2", "#B6A9E0", "#80B1D3", 
+  "#B3A4C9", 
+  "#B0D6F6", "#A8B9D6", "#F4B2B2","#F2C6C6",
+  "#B3D7D1", "#D8A5A6", "#B9C2FF", "#F1A8A8", 
+  "#98D59A", "#A9E0A1"
+)
 p_pie_BGC <- ggplot(dat_bgc) +
   geom_bar(aes(x=3, 
                ifelse(bgc == 'Others', per1/3, per1/9),
